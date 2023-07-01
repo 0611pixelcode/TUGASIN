@@ -1,0 +1,293 @@
+:root {
+  --primary-color: #4CAF50;
+}
+
+html {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #eee;
+  color: #222;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* CONTAINER */
+
+.container {
+  max-width: 1030px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* PARTNERS */
+
+.partners {
+  padding: 50px 0;
+}
+
+.partners-heading {
+  text-align: center;
+}
+
+.partners-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  list-style-type: none;
+}
+
+.partner-categories-item {
+  margin: 5px;
+}
+
+.partners-category {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #222;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.partners-category:hover {
+  box-shadow: inset 0 0 0 2px var(--primary-color);
+}
+
+.partner-categories-item-active .partners-category {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* PARTNERS-FORM */
+
+.partners-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.give-get-label {
+  width: 130px;
+  border-radius: 4px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.give-get-label:hover {
+  box-shadow: 0 0 0 2px #222;
+}
+
+.give-radio:checked ~ .give-label,
+.get-radio:checked ~ .get-label {
+  color: #222;
+}
+
+.give-radio:focus ~ .give-label,
+.get-radio:focus ~ .get-label {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.controller {
+  position: relative;
+  z-index: 1;
+  width: 58px;
+  height: 24px;
+  padding: 3px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.controller::before {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  content: "";
+  transition: margin 0.3s ease;
+}
+
+.give-radio:checked ~ .controller::before {
+  margin-right: 34px;
+}
+
+.get-radio:checked ~ .controller::before {
+  margin-left: 34px;
+}
+
+.controller-label {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 58px;
+  height: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* .controller-label-give {
+  background-color: gold;
+}
+
+.controller-label-get {
+  background-color: orangered;
+} */
+
+.give-radio:checked ~ .controller .controller-label-give,
+.get-radio:checked ~ .controller .controller-label-get {
+  z-index: -1;
+}
+
+/* BONUSES */
+
+.bonuses-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bonus {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.bonus-name-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  max-width: 50%;
+  height: 20px;
+  margin: 0;
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: #fff;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.bonus-name-wrapper::before,
+.bonus-name-wrapper::after {
+  position: absolute;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #eee;
+  content: "";
+}
+
+.bonus-name-wrapper::before {
+  left: -27px;
+}
+
+.bonus-name-wrapper::after {
+  right: -27px;
+}
+
+.bonus-name {
+  display: block;
+  padding: 10px 20px;
+  margin-bottom: -15px;
+  border-radius: 0 0 28px 28px;
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bonus-companies {
+  display: flex;
+  padding: 19px;
+  margin: 0;
+  border-radius: 80px;
+  background-color: #fff;
+  list-style-type: none;
+}
+
+.bonus-company + .bonus-company {
+  margin-left: 10px;
+}
+
+.bonus-company-link {
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.bonus-company-link:hover {
+  box-shadow: 0 0 0 5px var(--primary-color);
+}
+
+.bonus-company-img {
+  border-radius: 50%;
+  display: block;
+}
+
+.bonus-amount {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #222;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.bonus-company-link:hover .bonus-amount {
+  transform: translate(5px, -5px) rotate(4deg);
+}
